@@ -173,6 +173,52 @@ namespace madre.Controllers
             }
         }
 
+        [HttpGet("specificson/{clave}")]
+        public IActionResult SpecificSon(string clave)
+        {
+            try
+            {
+                string filePath = Path.Combine("data", "jsonPadre.json");
+                string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filePath);
+
+                if (System.IO.File.Exists(fullPath))
+                {
+                    string jsonPadre = System.IO.File.ReadAllText(fullPath);
+                    JObject padre = JObject.Parse(jsonPadre);
+
+                    JToken juego = padre["juegos"].FirstOrDefault(j => (string)j["clave"] == clave);
+
+                    if (juego != null)
+                    {
+                        string sonPath = "." + (string)juego["path"];
+                        string sonFullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, sonPath);
+
+                        if (System.IO.File.Exists(sonFullPath))
+                        {
+                            string sonJson = System.IO.File.ReadAllText(sonFullPath);
+                            return Ok(sonJson);
+                        }
+                        else
+                        {
+                            return NotFound($"El JSON hijo con clave '{clave}' no se encontró en el directorio de recursos.");
+                        }
+                    }
+                    else
+                    {
+                        return NotFound($"No se encontró ningún juego con la clave '{clave}' en el JSON padre.");
+                    }
+                }
+                else
+                {
+                    return NotFound("No se encontró el JSON padre en el directorio de datos.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error al obtener el JSON hijo: {ex.Message}");
+            }
+        }
+
 
 
 
