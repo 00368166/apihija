@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Newtonsoft.Json.Linq;
 
+using System.IO;
+
+
 
 namespace madre.Controllers
 {
@@ -175,6 +178,8 @@ namespace madre.Controllers
             }
         }
 
+        // ...
+
         [HttpGet("specific-son")]
         public IActionResult SpecificSon(string clave)
         {
@@ -197,18 +202,19 @@ namespace madre.Controllers
                     return Ok(jsonSon);
                 }
 
-                return NotFound();
+                return NotFound("No se encontró el juego correspondiente a la clave especificada.");
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, new { Message = $"Error al obtener el JSON hijo: {ex.Message}" });
+                return StatusCode(500, "Error interno del servidor: " + ex.Message);
             }
         }
 
 
 
+
     }
-    public class DatoModelo
+public class DatoModelo
     {
         // Propiedades del modelo de datos
         // ...
