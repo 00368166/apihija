@@ -21,7 +21,7 @@ namespace madre.Controllers
         {
             // Obtener y retornar el dato con el ID especificado para la hija
             // ...
-
+                
             // Ejemplo: Crear un objeto JSON
             var dato = new { Id = id, Nombre = "Ejemplo para la hija" };
 
@@ -175,52 +175,35 @@ namespace madre.Controllers
             }
         }
 
-        [HttpGet("specificson/{clave}")]
+        [HttpGet("specific-son")]
         public IActionResult SpecificSon(string clave)
         {
             try
             {
-                string filePath = Path.Combine("data", "jsonPadre.json");
-                string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filePath);
+                var jsonPadrePath = "./data/jsonPadre.json";
+                var jsonPadreContent = System.IO.File.ReadAllText(jsonPadrePath);
+                var jsonPadre = JObject.Parse(jsonPadreContent);
 
-                if (System.IO.File.Exists(fullPath))
+                var juegos = jsonPadre["juegos"];
+                var juego = juegos.FirstOrDefault(j => j["clave"].ToString() == clave);
+
+                if (juego != null)
                 {
-                    string jsonPadre = System.IO.File.ReadAllText(fullPath);
-                    JObject padre = JObject.Parse(jsonPadre);
+                    var path = juego["path"].ToString();
+                    var jsonSonPath = "./data" + path;
+                    var jsonSonContent = System.IO.File.ReadAllText(jsonSonPath);
+                    var jsonSon = JObject.Parse(jsonSonContent);
 
-                    JToken juego = padre["juegos"].FirstOrDefault(j => (string)j["clave"] == clave);
-
-                    if (juego != null)
-                    {
-                        string sonPath = "." + (string)juego["path"];
-                        string sonFullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, sonPath);
-
-                        if (System.IO.File.Exists(sonFullPath))
-                        {
-                            string sonJson = System.IO.File.ReadAllText(sonFullPath);
-                            return Ok(sonJson);
-                        }
-                        else
-                        {
-                            return NotFound($"El JSON hijo con clave '{clave}' no se encontró en el directorio de recursos.");
-                        }
-                    }
-                    else
-                    {
-                        return NotFound($"No se encontró ningún juego con la clave '{clave}' en el JSON padre.");
-                    }
+                    return Ok(jsonSon);
                 }
-                else
-                {
-                    return NotFound("No se encontró el JSON padre en el directorio de datos.");
-                }
+
+                return NotFound();
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, $"Error al obtener el JSON hijo: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, new { Message = $"Error al obtener el JSON hijo: {ex.Message}" });
             }
         }
-
 
 
 
