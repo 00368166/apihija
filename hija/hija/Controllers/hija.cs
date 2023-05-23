@@ -197,9 +197,8 @@ namespace madre.Controllers
                     var path = juego["path"].ToString();
                     var jsonSonPath = "./data" + path;
                     var jsonSonContent = System.IO.File.ReadAllText(jsonSonPath);
-                    var jsonSon = JObject.Parse(jsonSonContent);
 
-                    return Ok(jsonSon);
+                    return Content(jsonSonContent, "application/json");
                 }
 
                 return NotFound("No se encontró el juego correspondiente a la clave especificada.");
@@ -209,7 +208,6 @@ namespace madre.Controllers
                 return StatusCode(500, "Error interno del servidor: " + ex.Message);
             }
         }
-
 
 
 
