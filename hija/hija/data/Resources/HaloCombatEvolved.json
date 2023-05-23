@@ -1,28 +1,28 @@
 {
     "title": "Halo: Combat Evolved",
-    "path": "/juegos/haloce",
+    "clave": "J00011",
     "imageUrl": "https://example.com/haloce.jpg",
     "description": "Halo: Combat Evolved es un juego de disparos en primera persona que dio inicio a la icónica saga de Halo. Únete al Jefe Maestro en su lucha contra la amenaza alienígena conocida como el Covenant. Explora mundos alienígenas, utiliza armas futuristas y disfruta de emocionantes batallas tanto en modo individual como multijugador.",
-    "tags": ["FPS", "acción", "ciencia ficción"],
+    "tags": [ "FPS", "acción", "ciencia ficción" ],
     "version": "1.0",
     "imagenes": [
-      {
-        "nombre": "captura1",
-        "path": "haloce_captura1.jpg"
-      },
-      {
-        "nombre": "captura2",
-        "path": "haloce_captura2.jpg"
-      }
+        {
+            "nombre": "captura1",
+            "path": "haloce_captura1.jpg"
+        },
+        {
+            "nombre": "captura2",
+            "path": "haloce_captura2.jpg"
+        }
     ],
     "creadores": [
-      {
-        "nombre": "Bungie",
-        "pais": "Estados Unidos",
-        "fundacion": "1991",
-        "sitioWeb": "https://www.bungie.net/"
-      }
+        {
+            "nombre": "Bungie",
+            "pais": "Estados Unidos",
+            "fundacion": "1991",
+            "sitioWeb": "https://www.bungie.net/"
+        }
     ],
-    "tiempoDeJuego": "10-15 horas"
-  }
+    "tiempoDeJuego": "18"
+}
   

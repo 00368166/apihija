@@ -1,28 +1,28 @@
 {
     "title": "Red Dead Redemption",
-    "path": "/juegos/reddeadredemption",
+    "clave": "J00006",
     "imageUrl": "https://example.com/reddeadredemption.jpg",
     "description": "Red Dead Redemption es un juego de acción y aventuras ambientado en el Salvaje Oeste. Embárcate en una épica historia llena de forajidos, duelos, robos a trenes y exploración de vastos paisajes. Vive la vida de un proscrito y toma decisiones que afectarán tu destino en un mundo abierto lleno de posibilidades.",
-    "tags": ["acción", "aventuras", "mundo abierto"],
+    "tags": [ "acción", "aventuras", "mundo abierto" ],
     "version": "1.0",
     "imagenes": [
-      {
-        "nombre": "captura1",
-        "path": "reddeadredemption_captura1.jpg"
-      },
-      {
-        "nombre": "captura2",
-        "path": "reddeadredemption_captura2.jpg"
-      }
+        {
+            "nombre": "captura1",
+            "path": "reddeadredemption_captura1.jpg"
+        },
+        {
+            "nombre": "captura2",
+            "path": "reddeadredemption_captura2.jpg"
+        }
     ],
     "creadores": [
-      {
-        "nombre": "Rockstar Games",
-        "pais": "Estados Unidos",
-        "fundacion": "1998",
-        "sitioWeb": "https://www.rockstargames.com/"
-      }
+        {
+            "nombre": "Rockstar Games",
+            "pais": "Estados Unidos",
+            "fundacion": "1998",
+            "sitioWeb": "https://www.rockstargames.com/"
+        }
     ],
-    "tiempoDeJuego": "30-40 horas"
-  }
+    "tiempoDeJuego": "20"
+}
   

@@ -2,6 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Newtonsoft.Json.Linq;
+using System;
+using System.IO;
+using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 using System.IO;
 
@@ -13,6 +18,13 @@ namespace madre.Controllers
     [ApiController]
     public class hija : ControllerBase
     {
+        private readonly HttpClient httpClient;
+
+        public hija()
+        {
+            httpClient = new HttpClient();
+        }
+
         [HttpGet]
         public ActionResult<string> Saludar()
         {
@@ -247,10 +259,135 @@ namespace madre.Controllers
             }
         }
 
+
+
+
+        [HttpPost("agregarprograma/{clave}")]
+        public async Task<IActionResult> AgregarPrograma(string clave, [FromBody] ProgramaData data)
+        {
+            try
+            {
+                // Obtener la IP de la madre del archivo computadoras.json
+                string computadorasPath = Path.Combine("data", "computadoras.json");
+                string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, computadorasPath);
+
+                if (System.IO.File.Exists(fullPath))
+                {
+                    string jsonComputadoras = System.IO.File.ReadAllText(fullPath);
+                    var computadoras = JObject.Parse(jsonComputadoras);
+                    var madre = computadoras["madre"];
+
+                    if (madre != null)
+                    {
+                        string ipMadre = madre["Ip"].ToString();
+
+                        // Obtener información del juego utilizando la clave
+                        var jsonPadrePath = Path.Combine("data", "jsonPadre.json");
+                        var jsonPadreContent = System.IO.File.ReadAllText(jsonPadrePath);
+                        var jsonPadre = JObject.Parse(jsonPadreContent);
+
+                        var juegos = jsonPadre["juegos"];
+                        var juego = juegos.FirstOrDefault(j => j["clave"].ToString() == clave);
+
+                        if (juego != null)
+                        {
+                            var nombreJuego = juego["nombre"].ToString();
+                            var pathJuego = juego["path"].ToString();
+
+                            // Crear el contenido para el bloc de notas con la información del juego
+                            string contenidoBloc = $"{nombreJuego}{Environment.NewLine}{Environment.NewLine}" +
+                                $"Descripción: {data.Descripcion}{Environment.NewLine}" +
+                                $"Tiempo de juego: {data.TiempoDeJuego}{Environment.NewLine}";
+
+                            // Iniciar el bloc de notas con el contenido generado
+                            var startInfo = new ProcessStartInfo
+                            {
+                                FileName = "notepad.exe",
+                                Arguments = contenidoBloc,
+                                CreateNoWindow = true,
+                                UseShellExecute = false
+                            };
+
+                            using (var process = new Process { StartInfo = startInfo })
+                            {
+                                process.Start();
+                                process.WaitForInputIdle();
+
+                                var processId = process.Id;
+
+                                // Crear el objeto con los datos para enviar en la solicitud POST
+                                var postData = new
+                                {
+                                    PID = processId,
+                                    Timestamp = DateTime.UtcNow,
+                                    IP = ipMadre,
+                                    TiempoDeJuego = data.TiempoDeJuego,
+                                    NombreJuego = nombreJuego
+                                };
+
+                                // Convertir el objeto de datos a JSON
+                                string jsonData = Newtonsoft.Json.JsonConvert.SerializeObject(postData);
+
+                                // Crear la solicitud POST y configurar la URL y el contenido JSON
+                                var request = new HttpRequestMessage
+                                {
+                                    Method = HttpMethod.Post,
+                                    RequestUri = new Uri($"http://{ipMadre}/api/madre/agregarprograma"),
+                                    Content = new StringContent(jsonData, System.Text.Encoding.UTF8, "application/json")
+                                };
+
+                                // Enviar la solicitud y obtener la respuesta
+                                var response = await httpClient.SendAsync(request);
+
+                                if (response.IsSuccessStatusCode)
+                                {
+                                    // La solicitud fue exitosa
+                                    var responseContent = await response.Content.ReadAsStringAsync();
+                                    return Ok(responseContent);
+                                }
+                                else
+                                {
+                                    // La solicitud falló
+                                    return StatusCode((int)response.StatusCode, "Error al enviar la solicitud: " + response.StatusCode);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            return NotFound("No se encontró el juego correspondiente a la clave especificada.");
+                        }
+                    }
+                    else
+                    {
+                        return NotFound("No se encontró la IP de la madre en el archivo computadoras.json.");
+                    }
+                }
+                else
+                {
+                    return NotFound("No se encontró el archivo computadoras.json.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno del servidor: " + ex.Message);
+            }
+        }
+
+
+
+
+
     }
     public class DatoModelo
     {
         // Propiedades del modelo de datos
         // ...
     }
+    public class ProgramaData
+    {
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public int TiempoDeJuego { get; set; }
+    }
+
 }
