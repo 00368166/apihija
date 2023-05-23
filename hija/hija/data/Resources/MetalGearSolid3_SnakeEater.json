@@ -1,0 +1,28 @@
+{
+    "title": "Metal Gear Solid 3: Snake Eater",
+    "path": "/juegos/metalgearsolid3",
+    "imageUrl": "https://example.com/metalgearsolid3.jpg",
+    "description": "Metal Gear Solid 3: Snake Eater es un juego de sigilo y acción que te transporta a la Guerra Fría. Encarna a Naked Snake, también conocido como Big Boss, y adéntrate en una misión para infiltrarte en una jungla peligrosa y enfrentarte a enemigos mortales. Descubre una trama llena de giros, emociones y decisiones que afectarán el resultado del juego.",
+    "tags": ["sigilo", "acción", "espionaje"],
+    "version": "1.0",
+    "imagenes": [
+      {
+        "nombre": "captura1",
+        "path": "metalgearsolid3_captura1.jpg"
+      },
+      {
+        "nombre": "captura2",
+        "path": "metalgearsolid3_captura2.jpg"
+      }
+    ],
+    "creadores": [
+      {
+        "nombre": "Konami",
+        "pais": "Japón",
+        "fundacion": "1969",
+        "sitioWeb": "https://www.konami.com/"
+      }
+    ],
+    "tiempoDeJuego": "15-20 horas"
+  }
+  

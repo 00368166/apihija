@@ -1,0 +1,28 @@
+{
+    "title": "Assassin's Creed II",
+    "path": "/juegos/assassinscreed2",
+    "imageUrl": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000010684/e3067db27e695b489f16de14d650c1c487dcf54bc9bfbbea2510f7acc9a2d57e",
+    "description": "Assassin's Creed II es un juego de acción y aventuras que te lleva a la Italia del Renacimiento. Encarna a Ezio Auditore, un hábil asesino en busca de venganza y sumérgete en una historia épica llena de conspiraciones, combates emocionantes y sigilo. Explora ciudades históricas y desvela los secretos de la Orden de los Asesinos.",
+    "tags": ["acción", "aventuras", "sigilo"],
+    "version": "1.0",
+    "imagenes": [
+      {
+        "nombre": "captura1",
+        "path": "assassinscreed2_captura1.jpg"
+      },
+      {
+        "nombre": "captura2",
+        "path": "assassinscreed2_captura2.jpg"
+      }
+    ],
+    "creadores": [
+      {
+        "nombre": "Ubisoft",
+        "pais": "Francia",
+        "fundacion": "1986",
+        "sitioWeb": "https://www.ubisoft.com/"
+      }
+    ],
+    "tiempoDeJuego": "20-30 horas"
+  }
+  

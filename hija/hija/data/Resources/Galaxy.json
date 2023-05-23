@@ -1,0 +1,33 @@
+{
+    "title": "Galaxy Quest",
+    "path": "/juegos/galaxyquest",
+    "imageUrl": "https://bigfishgames-a.akamaihd.net/br_galaxy-quest/galaxy-quest_feature.jpg",
+    "description": "Galaxy Quest es un emocionante juego de aventuras espaciales en el que debes explorar un universo lleno de peligros y misterios. Conviértete en el capitán de tu propia nave y dirige a tu tripulación hacia la victoria.",
+    "tags": [ "aventuras", "espacio", "combate" ],
+    "version": "1.2",
+    "imagenes": [
+        {
+            "nombre": "captura1",
+            "path": "halo.jpg"
+        },
+        {
+            "nombre": "captura2",
+            "path": "descarga.jpg"
+        }
+    ],
+    "creadores": [
+        {
+            "nombre": "Outer Limits Studios",
+            "pais": "Estados Unidos",
+            "fundacion": "2015",
+            "sitioWeb": "https://outerlimitsstudios.com"
+        },
+        {
+            "nombre": "Indie Games",
+            "pais": "Reino Unido",
+            "fundacion": "2008",
+            "sitioWeb": "https://indiegames.co.uk"
+        }
+    ],
+    "tiempoDeJuego": "20-30 horas"
+}

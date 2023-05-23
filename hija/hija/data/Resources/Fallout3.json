@@ -1,0 +1,28 @@
+{
+    "title": "Fallout 3",
+    "path": "/juegos/fallout3",
+    "imageUrl": "https://static.wikia.nocookie.net/fallout/images/c/c0/Fallout_3_cover_art.png/revision/latest/scale-to-width-down/350?cb=20171129034440&path-prefix=es",
+    "description": "Fallout 3 es un juego de rol y acción ambientado en un mundo postapocalíptico. Explora la desolada Ciudad Capital de Washington D.C., lucha contra mutantes y facciones enemigas, y toma decisiones que determinarán el destino de la tierra devastada. Vive una historia emocionante llena de peligros, misterios y opciones morales difíciles.",
+    "tags": ["acción", "RPG", "mundo abierto"],
+    "version": "1.0",
+    "imagenes": [
+      {
+        "nombre": "captura1",
+        "path": "fallout3_captura1.jpg"
+      },
+      {
+        "nombre": "captura2",
+        "path": "fallout3_captura2.jpg"
+      }
+    ],
+    "creadores": [
+      {
+        "nombre": "Bethesda Game Studios",
+        "pais": "Estados Unidos",
+        "fundacion": "2001",
+        "sitioWeb": "https://bethesda.net/"
+      }
+    ],
+    "tiempoDeJuego": "30-40 horas"
+  }
+  

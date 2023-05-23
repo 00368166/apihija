@@ -1,0 +1,28 @@
+{
+    "title": "The Legend of Zelda: Ocarina of Time",
+    "path": "/juegos/ocarinaoftime",
+    "imageUrl": "https://example.com/ocarinaoftime.jpg",
+    "description": "The Legend of Zelda: Ocarina of Time es un juego de acción y aventuras que sigue las épicas aventuras de Link en su búsqueda por salvar el reino de Hyrule. Explora mazmorras, resuelve acertijos, derrota a enemigos y desvela el misterio detrás de la Trifuerza en esta legendaria entrega de la serie Zelda.",
+    "tags": ["acción", "aventuras", "RPG"],
+    "version": "1.0",
+    "imagenes": [
+      {
+        "nombre": "captura1",
+        "path": "ocarinaoftime_captura1.jpg"
+      },
+      {
+        "nombre": "captura2",
+        "path": "ocarinaoftime_captura2.jpg"
+      }
+    ],
+    "creadores": [
+      {
+        "nombre": "Nintendo",
+        "pais": "Japón",
+        "fundacion": "1889",
+        "sitioWeb": "https://www.nintendo.com/"
+      }
+    ],
+    "tiempoDeJuego": "20-30 horas"
+  }
+  

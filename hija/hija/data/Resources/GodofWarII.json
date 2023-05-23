@@ -1,0 +1,28 @@
+{
+    "title": "God of War II",
+    "path": "/juegos/godofwar2",
+    "imageUrl": "https://cdn1.epicgames.com/offer/3ddd6a590da64e3686042d108968a6b2/EGS_GodofWar_SantaMonicaStudio_S2_1200x1600-fbdf3cbc2980749091d52751ffabb7b7_1200x1600-fbdf3cbc2980749091d52751ffabb7b7",
+    "description": "God of War II es un juego de acción y aventuras que continúa la historia del guerrero espartano Kratos. Embárcate en una misión épica llena de mitología griega, enfréntate a poderosos dioses y criaturas mitológicas, y desata el poder de las armas divinas. Vive una historia llena de tragedia y venganza en tu búsqueda de destruir al dios del Olimpo.",
+    "tags": ["acción", "aventuras", "mitología"],
+    "version": "1.0",
+    "imagenes": [
+      {
+        "nombre": "captura1",
+        "path": "godofwar2_captura1.jpg"
+      },
+      {
+        "nombre": "captura2",
+        "path": "godofwar2_captura2.jpg"
+      }
+    ],
+    "creadores": [
+      {
+        "nombre": "Santa Monica Studio",
+        "pais": "Estados Unidos",
+        "fundacion": "1999",
+        "sitioWeb": "https://sms.playstation.com/"
+      }
+    ],
+    "tiempoDeJuego": "15-20 horas"
+  }
+  

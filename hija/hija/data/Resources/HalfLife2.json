@@ -1,0 +1,28 @@
+{
+    "title": "Half-Life 2",
+    "path": "/juegos/halflife2",
+    "imageUrl": "https://example.com/halflife2.jpg",
+    "description": "Half-Life 2 es un juego de disparos en primera persona que te sumerge en un mundo distópico dominado por una raza alienígena conocida como los Combine. Ponte en la piel de Gordon Freeman y únete a la resistencia para luchar contra la opresión. Descubre una trama intrigante, resuelve acertijos y disfruta de una experiencia de juego inmersiva.",
+    "tags": ["FPS", "acción", "ciencia ficción"],
+    "version": "1.0",
+    "imagenes": [
+      {
+        "nombre": "captura1",
+        "path": "halflife2_captura1.jpg"
+      },
+      {
+        "nombre": "captura2",
+        "path": "halflife2_captura2.jpg"
+      }
+    ],
+    "creadores": [
+      {
+        "nombre": "Valve Corporation",
+        "pais": "Estados Unidos",
+        "fundacion": "1996",
+        "sitioWeb": "https://www.valvesoftware.com/"
+      }
+    ],
+    "tiempoDeJuego": "15-20 horas"
+  }
+  

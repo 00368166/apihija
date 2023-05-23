@@ -1,0 +1,76 @@
+{
+  "juegos": [
+    {
+      "clave": "J00001",
+      "path": "/Resources/Galaxy.json",
+      "tags": ["aventuras", "espacio", "combate"],
+      "version": "1.0.0"
+    },
+    {
+      "clave": "J00002",
+      "path": "/Resources/TheElderScrollsV_Skyrim.json",
+      "tags": ["aventuras", "acción", "RPG"],
+      "version": "1.0.0"
+    },
+    {
+      "clave": "J00003",
+      "path": "/Resources/GrandTheftAuto_SanAndreas.json",
+      "tags": ["aventuras", "acción", "sandbox"],
+      "version": "1.0.0"
+    },
+    {
+      "clave": "J00004",
+      "path": "/Resources/BioShock.json",
+      "tags": ["aventuras", "FPS", "ciencia ficción"],
+      "version": "1.0.0"
+    },
+    {
+      "clave": "J00005",
+      "path": "/Resources/TheLegendofZelda_OcarinaofTime.json",
+      "tags": ["aventuras", "acción", "fantasía"],
+      "version": "1.0.0"
+    },
+    {
+      "clave": "J00006",
+      "path": "/Resources/RedDeadRedemption.json",
+      "tags": ["aventuras", "acción", "sandbox"],
+      "version": "1.0.0"
+    },
+    {
+      "clave": "J00007",
+      "path": "/Resources/AssassinsCreedII.json",
+      "tags": ["aventuras", "acción", "histórico"],
+      "version": "1.0.0"
+    },
+    {
+      "clave": "J00008",
+      "path": "/Resources/HalfLife2.json",
+      "tags": ["aventuras", "FPS", "ciencia ficción"],
+      "version": "1.0.0"
+    },
+    {
+      "clave": "J00009",
+      "path": "/Resources/Fallout3.json",
+      "tags": ["aventuras", "acción", "RPG", "apocalíptico"],
+      "version": "1.0.0"
+    },
+    {
+      "clave": "J00010",
+      "path": "/Resources/MetalGearSolid3_SnakeEater.json",
+      "tags": ["aventuras", "acción", "sigilo"],
+      "version": "1.0.0"
+    },
+    {
+      "clave": "J00011",
+      "path": "/Resources/HaloCombatEvolved.json",
+      "tags": ["aventuras", "acción", "ciencia ficción"],
+      "version": "1.0.0"
+    },
+    {
+      "clave": "J00012",
+      "path": "/Resources/GodofWarII.json",
+      "tags": ["aventuras", "acción", "mitología"],
+      "version": "1.0.0"
+    }
+  ]
+}

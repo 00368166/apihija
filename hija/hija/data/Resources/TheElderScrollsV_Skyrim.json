@@ -1,0 +1,27 @@
+{
+  "title": "The Elder Scrolls V: Skyrim",
+  "path": "/juegos/skyrim",
+  "imageUrl": "",
+  "description": "The Elder Scrolls V: Skyrim es un juego de rol de mundo abierto ambientado en un vasto y épico mundo de fantasía. Explora tierras llenas de dragones, misterios y peligros. Forja tu propio destino mientras te enfrentas a enemigos poderosos y tomas decisiones que cambiarán el curso de la historia.",
+  "tags": ["aventuras", "acción", "RPG"],
+  "version": "1.0",
+  "imagenes": [
+    {
+      "nombre": "captura1",
+      "path": "skyrim_captura1.jpg"
+    },
+    {
+      "nombre": "captura2",
+      "path": "skyrim_captura2.jpg"
+    }
+  ],
+  "creadores": [
+    {
+      "nombre": "Bethesda Game Studios",
+      "pais": "Estados Unidos",
+      "fundacion": "2001",
+      "sitioWeb": "https://bethesda.net"
+    }
+  ],
+  "tiempoDeJuego": "50-100 horas"
+}

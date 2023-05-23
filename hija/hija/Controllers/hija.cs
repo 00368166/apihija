@@ -149,6 +149,31 @@ namespace madre.Controllers
             }
         }
 
+        [HttpGet("getpadre")]
+        public IActionResult GetPadre()
+        {
+            try
+            {
+                string filePath = Path.Combine("data", "jsonPadre.json");
+                string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filePath);
+
+                if (System.IO.File.Exists(fullPath))
+                {
+                    string json = System.IO.File.ReadAllText(fullPath);
+                    return Ok(json);
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { Message = $"Error al obtener el archivo: {ex.Message}" });
+            }
+        }
+
+
 
 
     }
