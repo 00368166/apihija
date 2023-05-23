@@ -208,6 +208,8 @@ namespace madre.Controllers
                 return StatusCode(500, "Error interno del servidor: " + ex.Message);
             }
         }
+
+
         [HttpGet("getpadre/{etiqueta}")]
         public IActionResult GetPadrePorEtiqueta(string etiqueta)
         {
@@ -222,10 +224,17 @@ namespace madre.Controllers
                     var jsonPadre = JObject.Parse(json);
 
                     var juegos = jsonPadre["juegos"];
-                    var juegosFiltrados = juegos.Where(j => j["tags"].Contains(etiqueta)).ToList();
-                    jsonPadre["juegos"] = new JArray(juegosFiltrados);
+                    var juegosFiltrados = juegos.Where(j => j["tags"].Any(t => t.ToString() == etiqueta)).ToList();
 
-                    return Ok(jsonPadre.ToString());
+                    if (juegosFiltrados.Count > 0)
+                    {
+                        jsonPadre["juegos"] = new JArray(juegosFiltrados);
+                        return Ok(jsonPadre.ToString());
+                    }
+                    else
+                    {
+                        return NotFound();
+                    }
                 }
                 else
                 {
@@ -237,8 +246,6 @@ namespace madre.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, new { Message = $"Error al obtener el archivo: {ex.Message}" });
             }
         }
-
-
 
     }
     public class DatoModelo
